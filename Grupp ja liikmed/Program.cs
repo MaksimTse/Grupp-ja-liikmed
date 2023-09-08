@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,24 +23,23 @@ namespace Grupp_ja_liikmed
                 group2Members.Add(name2);
             }
 
-            Shuffle(group1Members, random);
-            Shuffle(group2Members, random);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Group 1 Candidates:");
             PrintColoredNames(group1Members);
+
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\nGroup 2 Candidates:");
             PrintColoredNames(group2Members);
             Console.ResetColor();
 
             string groupName1 = GenerateRandomName(random);
-            int maxAmount1 = random.Next(11, 21);
+            int maxAmount1 = 20;
             Console.ForegroundColor = ConsoleColor.Red;
             Group group1 = new Group(maxAmount1);
             Console.WriteLine($"\nGroup 1 Max Spaces: {maxAmount1} ");
 
             string groupName2 = GenerateRandomName(random);
-            int maxAmount2 = random.Next(11, 21);
+            int maxAmount2 = 20;
 
             Group group2 = new Group(maxAmount2);
             Console.WriteLine($"Group 2 Max Spaces: {maxAmount2}\n");
@@ -71,6 +70,7 @@ namespace Grupp_ja_liikmed
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Group 1 Successfully joined members: {string.Join(", ", group1.Members)}");
             Console.WriteLine($"Group 2 Successfully joined members: {string.Join(", ", group2.Members)}  \n");
+
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(group1.GetOldestMember());
             Console.WriteLine(group2.GetOldestMember());
@@ -91,7 +91,7 @@ namespace Grupp_ja_liikmed
 
         public static string GenerateRandomName(Random random)
         {
-            string[] names = { "John", "Mary", "Samantha", "Robert", "Emily", "Maksim", "Luca", "Alex", "Martin", "Yarik", "Sasha", "Timur", "Arkadii", "Archi", "Artur", "Albert", "Stark", "Tony", "Alik" };
+            string[] names = { "John", "Mary", "Samantha", "Robert", "Emily", "Maksim", "Luca", "Alex", "Martin", "Yarik", "Sasha", "Timur", "Arkadii", "Archi", "Artur", "Albert", "Stark", "Tony", "Alik", "Mart", "Kirill", "Oleg" };
             return names[random.Next(names.Length)];
         }
 
